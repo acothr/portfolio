@@ -26,36 +26,195 @@
   </div>
 </section>
 
-      <section id="work" class="project-stage">
+<section id="work" class="project-stage">
   <div class="project-copy">
     <p class="project-number">01 / Technical / System Investigation</p>
+
     <h2>All roads lead<br />to Rome.</h2>
+
+    <p class="project-hook">
+      A contact-level eligibility rule collided with user-level campaign
+      orchestration. The problem wasn't the logic—it was where the platform
+      was evaluating it.
+    </p>
+
+    <div class="project-tags" aria-label="Skills used">
+      <span>System Investigation</span>
+      <span>Solution Design</span>
+      <span>Technical Validation</span>
+    </div>
+
+    <button
+      class="project-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="project-01-details"
+    >
+      Read more <span aria-hidden="true">→</span>
+    </button>
   </div>
 
   <div class="project-visual" aria-hidden="true">
-    <!-- Maze artwork will live here -->
+    <!-- Final maze artwork will live here -->
+  </div>
+
+  <div class="project-details" id="project-01-details">
+    <div class="project-detail">
+      <p class="detail-label">Challenge</p>
+      <p>
+        A contact-level eligibility rule collided with user-level campaign orchestration, leaving a critical campaign requirement without a supported path forward. With the issue blocking delivery and escalating client concern, a workable solution had become urgent.
+      </p>
+    </div>
+
+    <div class="project-detail">
+      <p class="detail-label">What I did</p>
+      <p>
+        I reproduced the behavior, traced the platform boundary, and worked with Engineering to confirm the constraint. With conventional options exhausted, I designed a workaround that Engineering validated as a viable path forward. I kept investigating, and a final alternative uncovered a simpler supported solution that avoided the workaround entirely.
+      </p>
+    </div>
+
+    <div class="project-detail">
+      <p class="detail-label">Outcome</p>
+      <p>
+        The final approach evaluated eligibility in the recipient context during message generation—putting the rule where the required contact information was actually available and removing a critical blocker without relying on the more complex fallback.
+      </p>
+    </div>
   </div>
 </section>
 
-      <section class="project-stage project-enterprise">
+<section class="project-stage">
   <div class="project-copy">
     <p class="project-number">02 / Solution Architecture</p>
+
     <h2>Let me count<br />the ways.</h2>
+
+    <p class="project-hook">
+      Dozens of brands, campaign tracks, touches, languages, and delivery
+      methods created more than 100 possible outputs. The challenge wasn't
+      creating them—it was creating a system that could manage them.
+    </p>
+
+    <div class="project-tags" aria-label="Skills used">
+      <span>Solution Architecture</span>
+      <span>System Design</span>
+      <span>Technical Implementation</span>
+    </div>
+
+    <button
+      class="project-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="project-02-details"
+    >
+      Read more <span aria-hidden="true">→</span>
+    </button>
   </div>
 
   <div class="project-visual" aria-hidden="true">
-    <!-- Rail-yard artwork will live here -->
+    <!-- Final rail-yard artwork will live here -->
+  </div>
+
+  <div class="project-details" id="project-02-details">
+    <div class="project-detail">
+      <p class="detail-label">Challenge</p>
+      <p>
+         A portfolio of active, revenue-generating campaigns had to be rebuilt
+    on our ESP against a fixed go-to-market deadline. Across dozens of
+    brands, tracks, touches, and languages, the architecture had to support
+    hundreds of campaign permutations—each moving through development,
+    internal QA, and client UAT before it could be pushed to production.
+    The migration window left little room for rework or delay.
+      </p>
+    </div>
+
+    <div class="project-detail">
+      <p class="detail-label">What I did</p>
+      <p>
+        As lead technical designer and developer, I translated that matrix of
+    campaign permutations into an architecture the team could actually build
+    and operate under the deadline. I designed reusable structures across
+    brands and campaign paths, accounted for multiple languages and
+    implementation requirements, and built proofing and QA into the system
+    so complexity could be validated at scale.
+      </p>
+    </div>
+
+    <div class="project-detail">
+      <p class="detail-label">Outcome</p>
+      <p>
+        The campaigns were ready for go-to-market. Instead of treating hundreds of permutations as individual builds, the architecture created a scalable, maintainable system that could be tested and operated consistently across the campaign ecosystem. Following the migration, the client took ownership of ongoing maintenance—without needing the original development team to manage day-to-day changes.
+      </p>
+    </div>
   </div>
 </section>
 
-      <section class="project-stage project-multilingual">
+<section class="project-stage">
   <div class="project-copy">
     <p class="project-number">03 / System Design / Enablement</p>
+
     <h2>I say tomato.<br />You say tomahto.</h2>
+
+    <p class="project-hook">
+      Supporting more than 20 languages wasn't really a translation problem.
+      It was a systems problem: how do you make that much variation reusable,
+      reliable, and operable by the people who actually own the content?
+    </p>
+
+    <div class="project-tags" aria-label="Skills used">
+      <span>System Design</span>
+      <span>Dynamic Content</span>
+      <span>Client Enablement</span>
+    </div>
+
+    <button
+      class="project-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="project-03-details"
+    >
+      Read more <span aria-hidden="true">→</span>
+    </button>
   </div>
 
   <div class="project-visual" aria-hidden="true">
-    <!-- Exploded-layer artwork will live here -->
+    <!-- Final multilingual artwork will live here -->
+  </div>
+
+  <div class="project-details" id="project-03-details">
+    <div class="project-detail">
+      <p class="detail-label">Challenge</p>
+      <p>
+        A multilingual campaign program needed to support more than 20
+        languages without turning every locale into its own implementation.
+        Content, configuration, and reusable components had to work together
+        consistently—while remaining understandable and maintainable for the
+        client team responsible for operating it.
+      </p>
+    </div>
+
+    <div class="project-detail">
+      <p class="detail-label">What I did</p>
+      <p>
+        I designed and evolved a reusable campaign system that separated
+        language-specific content from the underlying implementation, using
+        locale-driven feeds and shared components to manage variation at
+        scale. When event-driven campaigns exposed a limitation in the
+        original profile-locale model, I adapted the architecture rather than
+        forcing the new use case through an assumption that no longer held.
+      </p>
+    </div>
+
+    <div class="project-detail">
+      <p class="detail-label">Outcome</p>
+      <p>
+        What began as a multilingual implementation became a system the client
+        could operate independently. New content and language variations could
+        be managed through the established structure instead of requiring
+        one-off development, while the architecture remained flexible enough
+        to accommodate campaign models it wasn't originally designed to
+        support.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -113,29 +272,63 @@
   </div>
 </section>
 
-      <section id="about">
+<section id="about">
   <p class="section-label">About</p>
 
   <div class="about-layout">
-    <h2>Developer.<br />Problem solver.<br />Systems thinker.</h2>
+    <div class="about-intro">
+      <h2>I make things.<br />Sometimes they even involve code.</h2>
+
+      <div class="about-sketch" aria-hidden="true">
+        <span>something is probably<br />being figured out here...</span>
+      </div>
+    </div>
 
     <div class="about-copy">
       <p>
-        About copy goes here.
+        I’m a developer, problem solver, and compulsive tinkerer. My work
+        tends to live somewhere between systems, technology, and creative
+        problem solving—but that curiosity doesn't clock out when I do.
+      </p>
+
+      <p>
+        Away from the keyboard, I'm usually making something, drawing
+        something, taking something apart, planning the next family adventure,
+        or convincing myself that an unnecessarily elaborate solution to a
+        household problem is completely reasonable.
+      </p>
+
+      <p>
+        Turns out I just really like figuring things out.
       </p>
     </div>
   </div>
 </section>
 
-      <section id="contact">
+<section id="contact">
   <p class="section-label">Contact</p>
 
-  <h2>Let’s talk.</h2>
+  <div class="contact-content">
+    <h2>Let’s talk.</h2>
+
+    <p class="contact-copy">
+      Strange problems, half-formed ideas, or just a good conversation.
+      I'm always happy to talk.
+    </p>
+  </div>
 
   <div class="contact-links">
-    <!-- Contact methods will be wired during the content pass -->
+    <a href="mailto:YOUR_EMAIL">Email</a>
+    <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener noreferrer">
+      LinkedIn
+    </a>
+    <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a>
   </div>
 </section>
+
+
     </main>
 
     <script type="module" src="/src/main.js"></script>
