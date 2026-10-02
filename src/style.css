@@ -65,6 +65,24 @@ h2 {
   line-height: 1.05;
 }
 
+/* HERO */
+
+#hero {
+  min-height: 70vh;
+  margin: 4px 0 24px;
+  padding-block: 80px;
+
+  background: #f7f1e8;
+
+  border-top: 2px solid #b96535;
+  border-bottom: 2px solid #b96535;
+
+  display: flex;
+  align-items: center;
+}
+
+/* FLAGSHIP WORK */
+
 #work {
   background: #fff;
 }
@@ -75,11 +93,6 @@ h2 {
 }
 
 #work + section + section {
-  background: #f7f1e8;
-  color: #151311;
-}
-
-#approach {
   background: #f7f1e8;
   color: #151311;
 }
@@ -115,10 +128,7 @@ h2 {
   opacity: 0.25;
 }
 
-.more-work {
-  min-height: auto;
-  padding-block: clamp(80px, 10vw, 160px);
-}
+/* SHARED SECTION LABEL */
 
 .section-label {
   margin: 0 0 48px;
@@ -126,6 +136,13 @@ h2 {
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+/* MORE WORK */
+
+.more-work {
+  min-height: auto;
+  padding-block: clamp(80px, 10vw, 160px);
 }
 
 .work-row {
@@ -152,6 +169,58 @@ h2 {
   font-size: 12px;
 }
 
+/* APPROACH */
+
+#approach {
+  min-height: auto;
+  padding-block: clamp(100px, 12vw, 180px);
+
+  background: #e8d2c3;
+  color: #151311;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(32px, 5vw, 80px);
+}
+
+#approach .section-label {
+  grid-column: 1 / -1;
+  margin-bottom: 72px;
+}
+
+.approach-item {
+  position: relative;
+  padding-top: 40px;
+  border-top: 1px solid currentColor;
+}
+
+.approach-item::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: #e8d2c3;
+}
+
+.approach-item h2 {
+  margin-bottom: 28px;
+  font-size: clamp(30px, 3vw, 48px);
+}
+
+.approach-item p {
+  margin: 0;
+  max-width: 38ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.55;
+}
+
+/* ABOUT */
+
 .about-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
@@ -165,6 +234,8 @@ h2 {
   line-height: 1.5;
 }
 
+/* CONTACT */
+
 #contact {
   min-height: 60vh;
   display: flex;
@@ -177,18 +248,4 @@ h2 {
 
 #contact h2 {
   font-size: clamp(40px, 5vw, 72px);
-}
-
-#hero {
-  min-height: 70vh;
-  margin: 4px 0 24px;
-  padding-block: 80px;
-
-  background: #f7f1e8;
-
-  border-top: 2px solid #b96535;
-  border-bottom: 2px solid #b96535;
-
-  display: flex;
-  align-items: center;
 }
