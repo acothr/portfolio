@@ -121,7 +121,11 @@ h2 {
 }
 
 .project-number {
+  display: inline-block;
   margin: 0 0 24px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid currentColor;
+
   font-family: monospace;
   font-size: 12px;
   letter-spacing: 0.08em;
@@ -135,19 +139,29 @@ h2 {
 
 .project-visual--maze {
   position: absolute;
-  top: 50%;
-  right: -6vw;
-  width: min(62vw, 1100px);
+  top: 44%;
+  right: -12vw;
+  width: min(78vw, 1400px);
   min-height: 0;
   transform: translateY(-50%);
   z-index: 0;
   pointer-events: none;
+  transition: opacity 250ms ease;
 }
 
 .project-visual--maze img {
   display: block;
-  width: 100%;
+  width: 90%;
   height: auto;
+}
+
+#work.is-expanded .project-visual--maze {
+  opacity: 0.12;
+}
+
+#work .project-details {
+  position: relative;
+  z-index: 2;
 }
 
 #work {
@@ -155,9 +169,47 @@ h2 {
   overflow: hidden;
 }
 
+#work {
+  background: inherit;
+}
+
 #work .project-copy {
   position: relative;
   z-index: 1;
+}
+
+#enterprise {
+  position: relative;
+  overflow: hidden;
+
+  background-color: #07383b;
+  background-image: url("/images/enterprise-switching-yard.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#enterprise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: linear-gradient(
+  to right,
+  #315f61 0%,
+  rgba(49, 95, 97, 0.96) 20%,
+  rgba(49, 95, 97, 0.78) 36%,
+  rgba(49, 95, 97, 0.48) 50%,
+  rgba(49, 95, 97, 0.18) 64%,
+  transparent 78%
+);
+}
+
+#work + section {
+  background: #567c7c;
+  color: #f7f1e8;
 }
 
 /* SHARED SECTION LABEL */
@@ -432,6 +484,13 @@ h2 {
   border-color: currentColor;
 }
 
+.project-index {
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 1px solid currentColor;
+  margin-right: 3px;
+}
+
 .project-hook {
   max-width: 48ch;
   margin: 32px 0 24px;
@@ -441,17 +500,93 @@ h2 {
 
 .project-tags {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 8px 18px;
+  gap: 0;
   margin-bottom: 32px;
 }
 
-.project-tags span,
-.detail-label {
+.project-tags span {
+  display: flex;
+  align-items: center;
   font-family: monospace;
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.project-tags span:not(:last-child)::after {
+  content: "";
+  width: 46px;
+  height: 9px;
+  margin: 0 14px;
+  background:
+    radial-gradient(
+      circle at center,
+      #b96535 0 2px,
+      transparent 2.5px
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 4px,
+      currentColor 4px 5px,
+      transparent 5px
+    );
+  opacity: 0.55;
+}
+
+#enterprise .project-tags span:not(:last-child)::after {
+  background:
+    radial-gradient(
+      circle at center,
+      #f7f1e8 0 2px,
+      transparent 2.5px
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 4px,
+      currentColor 4px 5px,
+      transparent 5px
+    );
+}
+
+.capabilities-heading {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 12px;
+
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.capabilities-marker {
+  position: relative;
+  width: 1px;
+  height: 22px;
+  background: #b96535;
+}
+
+.capabilities-marker::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b96535;
+  transform: translateX(-50%);
+}
+
+#enterprise .capabilities-marker {
+  background: #151311;
+}
+
+#enterprise .capabilities-marker::before {
+  background: #151311;
 }
 
 .project-toggle {
@@ -467,6 +602,7 @@ h2 {
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #b96535;
 }
 
 .project-toggle span {
@@ -506,7 +642,7 @@ h2 {
 
 .project-detail {
   padding-top: 24px;
-  border-top: 1px solid currentColor;
+  border-top: 1px solid rgba(21, 19, 17, 0.35);
 }
 
 .detail-label {
@@ -518,4 +654,60 @@ h2 {
   margin: 0;
   font-size: 16px;
   line-height: 1.6;
+}
+
+#enterprise {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: #567c7c;
+}
+
+#enterprise .project-copy,
+#enterprise .project-details {
+  position: relative;
+  z-index: 2;
+}
+
+#enterprise .project-details {
+  position: relative;
+  z-index: 2;
+}
+
+#enterprise.is-expanded .project-detail {
+  padding: 28px 28px 32px;
+
+  background: rgba(7, 56, 59, 0.82);
+
+  border-top: 1px solid rgba(247, 241, 232, 0.75);
+  border-radius: 0 0 6px 6px;
+}
+
+#enterprise .project-copy {
+  max-width: 760px;
+}
+
+#enterprise .project-toggle {
+  color: #f7f1e8;
+}
+
+#enterprise .capabilities-heading {
+  color: #f7f1e8;
+}
+
+#enterprise .project-visual--rail {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  min-height: 0;
+  pointer-events: none;
+}
+
+#enterprise .project-visual--rail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.72;
 }
