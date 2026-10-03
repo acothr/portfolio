@@ -13,3 +13,16 @@ document.querySelectorAll('.project-toggle').forEach((button) => {
       : 'Read more <span aria-hidden="true">→</span>'
   })
 })
+
+document.querySelectorAll('.work-item .work-row').forEach((button) => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.work-item')
+    const expanded = button.getAttribute('aria-expanded') === 'true'
+    const toggle = button.querySelector('.work-toggle')
+
+    button.setAttribute('aria-expanded', String(!expanded))
+    item.classList.toggle('is-expanded', !expanded)
+
+    toggle.textContent = expanded ? '+' : '−'
+  })
+})

@@ -133,10 +133,31 @@ h2 {
   max-width: 700px;
 }
 
-.project-visual {
-  min-height: 360px;
-  border: 1px dashed currentColor;
-  opacity: 0.25;
+.project-visual--maze {
+  position: absolute;
+  top: 50%;
+  right: -6vw;
+  width: min(62vw, 1100px);
+  min-height: 0;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.project-visual--maze img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#work {
+  position: relative;
+  overflow: hidden;
+}
+
+#work .project-copy {
+  position: relative;
+  z-index: 1;
 }
 
 /* SHARED SECTION LABEL */
@@ -151,9 +172,8 @@ h2 {
 
 /* MORE WORK */
 
-.more-work {
-  min-height: auto;
-  padding-block: clamp(80px, 10vw, 160px);
+.more-work .section-label {
+  margin-bottom: 28px;
 }
 
 .work-row {
@@ -165,7 +185,7 @@ h2 {
   border-top: 1px solid currentColor;
 }
 
-.work-row:last-child {
+.more-work > .work-row:last-child {
   border-bottom: 1px solid currentColor;
 }
 
@@ -179,6 +199,96 @@ h2 {
   font-family: monospace;
   font-size: 12px;
 }
+
+.work-item {
+  border-bottom: 1px solid #b96535;
+}
+
+.work-item .work-row {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  align-items: start;
+}
+
+.work-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.work-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.work-hook {
+  max-width: 80ch;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.55;
+  opacity: 0.78;
+}
+
+.work-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(32px, 5vw, 80px);
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 0;
+
+  transition:
+    max-height 400ms ease,
+    opacity 250ms ease,
+    padding 400ms ease;
+}
+
+.work-item.is-expanded .work-details {
+  max-height: 500px;
+  padding: 16px 0 48px 84px;
+  opacity: 1;
+}
+
+.work-details .work-card > p:last-child {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.work-card {
+  padding-top: 20px;
+  border-top: 1px solid currentColor;
+}
+
+.work-item .work-row > span:first-child {
+  padding-top: 16px;
+}
+
+.work-item .work-row > span:nth-child(3) {
+  padding-top: 60px;
+}
+
+.work-item .work-row .work-toggle {
+  justify-self: end;
+  align-self: start;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 1;
+
+  color: #b96535;
+
+  transform: translateY(32px);
+}
+
 
 /* APPROACH */
 
@@ -270,8 +380,6 @@ h2 {
   text-align: center;
   color: rgb(21 19 17 / 55%);
 }
-
-/* CONTACT */
 
 /* CONTACT */
 

@@ -54,9 +54,12 @@
     </button>
   </div>
 
-  <div class="project-visual" aria-hidden="true">
-    <!-- Final maze artwork will live here -->
-  </div>
+  <div class="project-visual project-visual--maze" aria-hidden="true">
+  <img
+    src="/images/multi-address-maze.png"
+    alt=""
+  />
+</div>
 
   <div class="project-details" id="project-01-details">
     <div class="project-detail">
@@ -218,29 +221,153 @@
   </div>
 </section>
 
-      <section class="more-work">
+<section class="more-work">
   <p class="section-label">More Work</p>
 
-  <div class="work-row">
-    <span>04</span>
-    <h3>Proof before promises.</h3>
-    <span>Pre-Sales / Solutions</span>
-    <span>+</span>
+  <div class="work-item">
+    <button
+      class="work-row"
+      type="button"
+      aria-expanded="false"
+      aria-controls="work-04-details"
+    >
+      <span>04</span>
+
+      <span class="work-summary">
+        <h3 class="work-title">Proof before promises.</h3>
+        <span class="work-hook">
+          A finalist RFP needed more than a pitch. It needed a working technical
+          proof that the proposed solution could actually be built.
+        </span>
+      </span>
+
+      <span>Pre-Sales / Solutions</span>
+      <span class="work-toggle" aria-hidden="true">+</span>
+    </button>
+
+    <div class="work-details" id="work-04-details">
+      <div class="work-card">
+        <p class="detail-label">Problem</p>
+        <p>
+          A finalist RFP called for more than a conceptual solution. The proposed campaign experience depended on profile data, lookup data, content feeds, and dynamic content working together—and the team needed to demonstrate that the approach was technically viable.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <p class="detail-label">Approach</p>
+        <p>
+          I built the technical proof behind the proposed solution, connecting the required data sources and dynamic content logic into a working implementation. I also supported the Solutions Consulting team with the technical detail needed to explain how the concept would work in practice.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <p class="detail-label">Result</p>
+        <p>
+          The team entered the finalist presentation with a working proof instead of a theoretical promise. The prototype demonstrated that the proposed architecture could support the experience being presented and gave the team concrete technical evidence to stand behind the solution.
+        </p>
+      </div>
+    </div>
   </div>
 
-  <div class="work-row">
+  <div class="work-item">
+  <button
+    class="work-row"
+    type="button"
+    aria-expanded="false"
+    aria-controls="work-05-details"
+  >
     <span>05</span>
-    <h3>Look before you leap.</h3>
-    <span>Consulting</span>
-    <span>+</span>
-  </div>
 
-  <div class="work-row">
-    <span>06</span>
-    <h3>Haven't we met before?</h3>
-    <span>Production Engineering</span>
-    <span>+</span>
+    <span class="work-summary">
+      <h3 class="work-title">Look before you leap.</h3>
+
+      <span class="work-hook">
+        A design system can standardize how something looks. The harder question
+        is whether those decisions will still work when they meet the realities
+        of production.
+      </span>
+    </span>
+
+    <span>Consulting</span>
+    <span class="work-toggle" aria-hidden="true">+</span>
+  </button>
+
+  <div class="work-details" id="work-05-details">
+    <div class="work-card">
+      <p class="detail-label">Problem</p>
+      <p>
+        Our internal design team was helping a client establish an email design system, including aesthetic best practices, ADA considerations, and modules expected to be difficult to implement. Before those patterns became standards, the client needed to understand what the most complex modules would mean in production.
+      </p>
+    </div>
+
+    <div class="work-card">
+      <p class="detail-label">Approach</p>
+      <p>
+        I worked with the design team to identify and confirm the highest-complexity modules, then built working examples for the client. For each, I demonstrated both the industry-standard approach and how I would tackle the problem as an email-development SME, documenting the advantages and tradeoffs of each and providing Litmus rendering results for comparison.
+      </p>
+    </div>
+
+    <div class="work-card">
+      <p class="detail-label">Result</p>
+      <p>
+        Instead of recommending a single “right” implementation, we gave the client evidence they could use to choose. They could compare rendering behavior, complexity, and maintenance tradeoffs against the capabilities of their own internal team and adopt the approach that best fit how they would actually operate the system.
+      </p>
+    </div>
   </div>
+</div>
+
+  <div class="work-item">
+  <button
+    class="work-row"
+    type="button"
+    aria-expanded="false"
+    aria-controls="work-06-details"
+  >
+    <span>06</span>
+
+    <span class="work-summary">
+      <h3 class="work-title">Haven't we met before?</h3>
+
+      <span class="work-hook">
+        Dynamic content is useful until the same thing shows up twice—or bad
+        source data leaves you with nothing useful to show.
+      </span>
+    </span>
+
+    <span>Production Engineering</span>
+    <span class="work-toggle" aria-hidden="true">+</span>
+  </button>
+
+  <div class="work-details" id="work-06-details">
+    <div class="work-card">
+      <p class="detail-label">Problem</p>
+      <p>
+        A dynamic content implementation relied on source data that wasn't
+        always predictable. Duplicate selections, invalid values, and missing
+        content could all create poor customer experiences if the implementation
+        simply trusted the inputs it received.
+      </p>
+    </div>
+
+    <div class="work-card">
+      <p class="detail-label">Approach</p>
+      <p>
+        I turned the broader solution into production-ready logic, adding
+        duplicate prevention, defensive validation, and fallback behavior for
+        cases where the source data couldn't produce a valid selection. I
+        tested the implementation across expected and edge-case scenarios
+        before deployment.
+      </p>
+    </div>
+
+    <div class="work-card">
+      <p class="detail-label">Result</p>
+      <p>
+        Client marketers could independently curate and update content without requiring engineering deployments, while the implementation automatically protected against duplicate or invalid selections. The system degraded gracefully when source data was incomplete, giving the team a dependable editorial workflow that remains in production today.
+      </p>
+    </div>
+  </div>
+</div>
 </section>
 
 <section id="approach">
