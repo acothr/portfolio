@@ -82,6 +82,168 @@ h2 {
   align-items: center;
 }
 
+#hero {
+  position: relative;
+  overflow: visible;
+}
+
+.hero-transition {
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+}
+
+.hero-explore {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #b96535;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.hero-explore span {
+  transition: transform 180ms ease;
+}
+
+.hero-explore:hover span {
+  transform: translateY(3px);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+#hero h1 {
+  max-width: 760px;
+  font-size: clamp(52px, 5.8vw, 88px);
+  line-height: 0.96;
+}
+
+.hero-response {
+  margin: 24px 0 0;
+  font-size: clamp(36px, 3.4vw, 52px);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  color:#b96535;
+}
+
+.hero-ellipsis::after {
+  content: "";
+  animation: heroEllipsis 2s steps(1, end) forwards;
+}
+
+.hero-node {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(185, 101, 53, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+
+  animation: heroNodePulse 3s ease-out -1s infinite;
+}
+
+.hero-node--test {
+  top: 64%;
+  left: 31%;
+}
+
+@keyframes heroNodePulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  25% {
+    opacity: 0.8;
+  }
+
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+
+.hero-response {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: heroGood 500ms ease 2.15s forwards;
+}
+
+@keyframes heroEllipsis {
+  0%,
+  24% {
+    content: "";
+  }
+
+  25%,
+  49% {
+    content: ".";
+  }
+
+  50%,
+  74% {
+    content: "..";
+  }
+
+  75%,
+  100% {
+    content: "...";
+  }
+}
+
+@keyframes heroGood {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-visual {
+  z-index: 1;
+}
+
+.hero-visual {
+  position: absolute;
+  top: 48%;
+  right: -2%;
+  width: 65%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#work::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+
+  background: #fff;
+  z-index: 1;
+  pointer-events: none;
+}
 
 /* FLAGSHIP WORK — SHARED */
 
@@ -310,7 +472,7 @@ h2 {
 
 .project-visual--maze {
   position: absolute;
-  top: 44%;
+  top: 50%;
   right: -12vw;
 
   width: min(78vw, 1400px);
